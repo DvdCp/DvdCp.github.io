@@ -3077,6 +3077,18 @@ input, select, textarea {
 		-ms-align-items: center;
 		align-items: center;
 		margin: 4em 0 2em 0;
+		padding: 1em;
+
+		border-radius: 25px;
+
+		/*box-shadow:  -1px 1px #ff9900,
+		  -2px 2px #ff9900,
+		  -3px 3px #ff9900,
+		  -4px 4px #ff9900,
+		  -5px 5px #ff9900;
+		*/
+
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4)
 	}
 
 		@media screen and (max-width: 980px) {
