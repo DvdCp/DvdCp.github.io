@@ -184,6 +184,7 @@ input, select, textarea {
 		text-decoration: none !important;
 		border-bottom: dotted 1px;
 		color: inherit;
+		cursor: pointer;
 	}
 
 		a:hover {
