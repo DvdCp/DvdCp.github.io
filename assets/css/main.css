@@ -181,7 +181,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom 0.2s ease;
 		transition: color 0.2s ease, border-bottom 0.2s ease;
-		text-decoration: none;
+		text-decoration: none !important;
 		border-bottom: dotted 1px;
 		color: inherit;
 	}
