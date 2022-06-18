@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>David Capuano</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Smart Traffic Lights </h1>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/SMTL_menu.png" alt="" /></span>
+								<p>Questo è il mio progetto più completo. E' il risultato del mio tirocino universitario su cui ho basato la mia tesi di laurea triennale.
+									Lo scopo del progetto è stato quello di costruire una scena in 3D di un tratto di starda gestito da 2 semafori intelligenti che fossero in grado 
+									di gestire il flusso di auto in maniera del tutto dinamico.
+								</p>
+								<p>
+									Questo progetto è stato realizzato da zero, quindi ho progettato e implementato tutti gli aspetti della simulazione.<br/>
+									La parte centrale del progetto è stata quella di ideare e realizzare l'AI utilizzando il pacchetto ML Agents Toolkit di Unity puntando a 
+									ottenere i seguenti obbietivi:<br/>
+									<ul>
+										<li>Prevenire gli incidenti</li>
+										<li>Non si devono creare code</li>
+										<li>Un semaforo non può essere rosso per troppo tempo</li>
+										<li>Controllare l'uscita delle auto dalla zona critica</li>
+									  </ul>
+									Seguendo questi punti, ho addestrato l'AI con il paradigma di <i>Reinforcement Learning</i> assegnandogli bonus/malus a seconda dell'esito delle sue azioni.
+									Per addestrare il modello nel migliore dei modi, ho utilizzato il servizio cloud Google Colab per lanciare lunghe sessioni di addestramento. 
+								</p>
+								<p>
+									Un altro aspetto importante del progetto è il traffico stesso: questo viene generato da due generatori posti alle due estrmità del tratto stradale,
+									generando auto in entrambe le corsie. Le auto si comportano in modo ideale, ovvero proseguono dritte (ognuna con una velocità diversa) e si fermano
+									ad una distanza di sicurezza fissa per evitare tamponamenti, grazie ad un RayCast sparato dal parabrezza di ogni auto che rileva di presenza di eventuali
+									automoboli poste frontalmente.<br/>
+									Le auto si muovono lungo il tragitto grazie ad un sistema di <i>waypoints</i> per entrambe le direzioni del traffico.															  
+								</p>
+								<h2>Demo</h2>
+								<p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/cFhqXddZJPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</p>
+							</section>	
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design by: <a href="https://html5up.net">HTML5 UP</a>. Customized by me with
+							<span><img src="/images/8-bit-heart-pixel-heart-115690148590zhw0zph5j-removebg-preview.png" style="width: 1.5%; max-width: 1.5%; height: auto; text-align: center;"></span>
+							and <span><img src="/images/aa566b937b2a217.png" style="width: 1.5%; max-width: 1.5%; height: auto; text-align: center;"></span>
+						</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
