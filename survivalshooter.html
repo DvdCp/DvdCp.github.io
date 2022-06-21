@@ -29,19 +29,37 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								<span class="image main"><img src="images/SRS_game.png" alt="" /></span>
-								<p>Per PixelGunsmith mi sono ispirato al sistema di personalizzazione delle armi di Call of Duty Modern Warfare del 2019. Ogni arma è composta da
-									una serie di componenti i quali presentano delle varianti da poter selezionare per creare la propria arma personalizzata.
+								<p>Questo è un progetto realizzato a partire dall'omonimo tutorial ufficiale Unity con l'aggiunta di qualche modifica.
+									Il gioco è un TPS dove l'obbiettivo è sopravvivere quanto più a lungo possibile ad un'orda infinita di oresetti zombie. 
 								</p>
 								<p>
-									Per ogni tipologia di componente esiste uno sprite sheets contenente tutte le varianti di esso. Per poter disegnare in pixel art ho utilizzato il software GraphicsGale.
+									Sono presenti 3 tipi di mostri: orsacchiotto zombie, coniglietto zombie e elefante zombie, ognuno con diverso numero di punti vita ed a ogni uccisione, si ottegono dei punti.
+									I nemici sono dotati del componente <i>NavMeshAgent</i> e il loro target(<i>destination</i>) è proprio il player (come ogni zombie che si rispetti inseguono il player).
 								</p>
 								<p>
-									Attualmente è possibile solo generare una combinazione casuale di componenti. Per realizzare ciò, ho ricavato le singole sprite dagli sprite sheets ed le ho salvate in
-									degli array divisi per categoria (<i>mags, aims, bodies, barrells ...</i>). Quando viene premuto il bottone <i>Generate Random</i> viene selezionato un componente casuale
-									per ogni cateogoria e piazzato sull'arma.															  
+									Il sistema di shooting è basato sui <i>RayCast</i> che vengono sparati dalla canna e se questo colpisce un nemico, gli attribuisce del danno. E' possibile sparare sia in modalità semiautomatica
+									che automatica.														  
 								</p>
 								<p>
-									Come sviluppi futuri, verranno introdotte più armi da poter personalizzare ed è gia in WIP la possibilità di scegliere il tipo di componente da cambiare.															  
+									La parte interessante del progetto sono le modifiche post tutorial che ho implementato.<br \>
+									La prima modifica degna di nota è l'indicatore di munizioni in basso a sinistra accompagnato dall'icona dell'arma in uso. Originarimente il fucile era dotato di munizioni infinite nel caricatore
+									e per rendere le cose più interresanti ho implementato il limite di 30 colpi per caricatore. Per potere ricaricare bisogna premere esclusivamente il tasto <i>R</i>. Come effetto audio, ho aggiunto
+									una clip audio di ricarica di un AK47. Quando si prova a sparare con il caricatore vuoto, non partirà alcun proiettile dal fucile e verrà riprodotto il suono di un <i>*click*</i>.  
+									Viene mostrato un indizzio visivo in basso a destra vicino le munizioni suggerendo di ricaricare. 															  
+								</p>
+								<p>
+									Altra modifica interessante che ho applicato è la possibilità di raccogliere dei <i>power up</i> che i nemici possono rilasciare dopo la loro morte. I power ups in questione sono:
+									<ul>
+										<li>Damage Buff (rosso)</li>
+										<li>Speed Buff (giallo)</li>
+										<li>Fire Rateo Buff (viola)</li>
+										<li>Health Buff (green)</li>
+									</ul>
+									Come suggeriscono i loro nomi, i power up incremento per un breve lasso di tempo le caretteristiche del player. Questi incrementi sono gestiti dal componente <i>PowerUpManager</i> che gestisce i vari power ups
+									che il player ha raccolto. Quando un power up viene raccolto, questo viene assorbito ed utilizzato dal player. Ogni power up ha un tempo di durata e un tempo di permanenza sul terreno di gioco.
+									Se un power up non viene raccolto entro questo lasso di tempo, scompare.<br \>
+									Gli effetti dei power ups non sono cumulabili, ciò vuol dire che se raccolgo due <i>Damage Buff</i> non farò il doppio dei danni, bensì il timer viene per quel power up verrà resettato permettendomi di usare il potenziamento per più tempo (questo vale 
+									per tutti i power ups tranne che per quello dei punti vita perchè il suo effetto è immediato poichè ne ripristina una parte).
 								</p>
 								<h1>Demo</h1>
 								<p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/7t5zOCkh1Sc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -52,14 +70,23 @@
 
 							<div class="slide-row">
 								<div class="column">
-								  <img src="images/PG_game.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+								  <img src="images/SRS_game.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
 								</div>
 								<div class="column">
-								  <img src="images/PG_game_1.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+								  <img src="images/SRS_game_1.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
 								</div>
 								<div class="column">
-								  <img src="images/PG_game_2.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+								  <img src="images/SRS_game_2.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
 								</div>
+								<div class="column">
+									<img src="images/SRS_game_over.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+								  </div>
+								  <div class="column">
+									<img src="images/SRS_overview.png" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+								  </div>
+								  <div class="column">
+									<img src="images/SRS_power_ups.png" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+								  </div>
 							</div>
 							  
 							<div id="myModal" class="modal">
@@ -67,14 +94,23 @@
 							<div class="modal-content">
 							
 								<div class="mySlides">
-								<img src="images/PG_game.png" style="width:100%">
+								<img src="images/SRS_game.png" style="width:100%">
 								</div>							
 								<div class="mySlides">
-									<img src="images/PG_game_1.png" style="width:100%">
+									<img src="images/SRS_game_1.png" style="width:100%">
 								</div>							
 								<div class="mySlides">
-									<img src="images/PG_game_2.png" style="width:100%">
-								</div>						
+									<img src="images/SRS_game_2.png" style="width:100%">
+								</div>
+								<div class="mySlides">
+									<img src="images/SRS_game_over.png" style="width:100%">
+								</div>							
+								<div class="mySlides">
+									<img src="images/SRS_overview.png" style="width:100%">
+								</div>	
+								<div class="mySlides">
+									<img src="images/SRS_power_ups.png" style="width:100%">
+								</div>							
 
 								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 								<a class="next" onclick="plusSlides(1)">&#10095;</a>
