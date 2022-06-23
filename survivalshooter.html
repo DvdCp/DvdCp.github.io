@@ -48,12 +48,13 @@
 									Viene mostrato un indizzio visivo in basso a destra vicino le munizioni suggerendo di ricaricare. 															  
 								</p>
 								<p>
-									Altra modifica interessante che ho applicato è la possibilità di raccogliere dei <i>power up</i> che i nemici possono rilasciare dopo la loro morte. I power ups in questione sono:
+									Altra modifica interessante che ho applicato è la possibilità di raccogliere dei <i>power up</i> che i nemici possono rilasciare dopo la loro morte. E' possibile assegnare ad ogni tipologia di nemico una serie di
+									power ups che può rilasciare. Inoltre ogni nemico ha la propria percentuale di possibilità di rilascio di uno dei suoi power ups (viene scelto casualmente un power up al momento della morte dello zombie). I power ups in questione sono:
 									<ul>
 										<li>Damage Buff (rosso)</li>
 										<li>Speed Buff (giallo)</li>
 										<li>Fire Rateo Buff (viola)</li>
-										<li>Health Buff (green)</li>
+										<li>Health Buff (verde)</li>
 									</ul>
 									Come suggeriscono i loro nomi, i power up incremento per un breve lasso di tempo le caretteristiche del player. Questi incrementi sono gestiti dal componente <i>PowerUpManager</i> che gestisce i vari power ups
 									che il player ha raccolto. Quando un power up viene raccolto, questo viene assorbito ed utilizzato dal player. Ogni power up ha un tempo di durata e un tempo di permanenza sul terreno di gioco.
@@ -62,7 +63,9 @@
 									per tutti i power ups tranne che per quello dei punti vita perchè il suo effetto è immediato poichè ne ripristina una parte).
 								</p>
 								<h1>Demo</h1>
-								<p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/7t5zOCkh1Sc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<p style="text-align: justify;">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/mvSQATc-n7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/HoCMOHcDEW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</p>
 							</section>	
 
@@ -110,8 +113,8 @@
 								</div>	
 								<div class="mySlides">
 									<img src="images/SRS_power_ups.png" style="width:100%">
-								</div>							
-
+								</div>
+							
 								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 								<a class="next" onclick="plusSlides(1)">&#10095;</a>
 							
