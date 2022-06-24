@@ -101,7 +101,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		width: calc(100% + 2em);
+		width: auto;
 	}
 
 		.split-content > * {
